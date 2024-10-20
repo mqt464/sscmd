@@ -1,6 +1,6 @@
 module.exports = {
   data: {
-    name: `guthub`,
+    name: `github`,
   },
   async execute(interaction, client) {
     await interaction.reply({

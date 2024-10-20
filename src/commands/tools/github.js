@@ -13,7 +13,7 @@ module.exports = {
     .setDescription("link to my github"),
   async execute(interaction, client) {
     const button = new ButtonBuilder()
-      .setURL(`https://github.com/mqt464`)
+      .setURL(`https://github.com/mqt464/sscmd`)
       .setLabel(`github!`)
       .setStyle(ButtonStyle.Link);
 

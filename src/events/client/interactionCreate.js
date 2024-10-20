@@ -19,9 +19,10 @@ module.exports = {
         });
       }
     } else if (interaction.isButton()) {
+      // * button
       const { buttons } = client;
       const { customId } = interaction;
-      const button = (button = buttons.get(customId));
+      const button = buttons.get(customId);
       if (!button)
         return new Error("🟥 There is no customId For this button...");
 
@@ -31,6 +32,7 @@ module.exports = {
         console.error(error);
       }
     } else if (interaction.isSelectMenu()) {
+      // * selection menu
       const { selectMenus } = client;
       const { customId } = interaction;
       const menu = selectMenus.get(customId);
@@ -42,6 +44,7 @@ module.exports = {
         console.error(error);
       }
     } else if (interaction.isContextMenuCommand()) {
+      // * Context menu
       const { commands } = client;
       const { commandName } = interaction;
       const contextCommand = commands.get(commandName);
@@ -52,7 +55,10 @@ module.exports = {
       } catch (error) {
         console.error(error);
       }
-    } else if (interaction.type == InteractionType.ApplicationCommandAutocomplete) {
+    } else if (
+      interaction.type == InteractionType.ApplicationCommandAutocomplete
+    ) {
+      // * Autocomplete
       const { commands } = client;
       const { commandName } = interaction;
       const command = commands.get(commandName);

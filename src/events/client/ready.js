@@ -17,7 +17,7 @@ module.exports = {
 
     setInterval(() => {
       checkSpotifyStatus(client, guild, userId);
-    }, 360000); // 6 minutes 
+    }, 600000); // 10 minutes 
   },
 };
 
@@ -41,8 +41,6 @@ async function checkSpotifyStatus(client, guild, userId) {
       await setBotAvatar(client, avatarBuffer);
       await client.user.setBanner(avatarBuffer);
       await client.user.setActivity(`${songName} - ${artistName}`, { type: ActivityType.Listening });
-
-      console.log("avatar updated!");
     } else {
       return;
     }
